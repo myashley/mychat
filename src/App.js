@@ -51,10 +51,14 @@ class App extends Component {
 
 
   onSendMessage = message => {
-    this.drone.publish({
-      room: "observable-room",
-      message
-    })
+    if(!message){
+      return false
+    } else {
+      this.drone.publish({
+        room: "observable-room",
+        message
+      })
+    } 
   }
 
   render() {
