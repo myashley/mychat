@@ -2,7 +2,6 @@
 
 Still experimenting...
 
-
 ## To run
 
 In the project directory, you can run:
