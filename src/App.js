@@ -27,7 +27,7 @@ class App extends Component {
 
   constructor() {
     super()
-    this.drone = new window.Scaledrone("3XVqNlawfX9TpTiK", {
+    this.drone = new window.Scaledrone(`${process.env.REACT_APP_MY_CHANNEL_ID}`, {
       data: this.state.member
     })
 
@@ -43,7 +43,6 @@ class App extends Component {
     const room = this.drone.subscribe('observable-room')
     room.on('data', (data, member) => {
       const messages = this.state.messages
-      console.log(messages)
       messages.push({member, text: data})
       this.setState({messages})
     })
